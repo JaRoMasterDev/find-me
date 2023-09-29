@@ -1,3 +1,12 @@
+.main {
+  width: 100vw;
+  height: 100vh;
+}
+
+.main.started {
+  cursor: none;
+}
+
 .follow {
   position: absolute;
   transform: translate(-50%, -50%) scale(15);
@@ -11,17 +20,44 @@
     #000 100px
   );
   transition: transform 1s;
+  pointer-events: none;
+  z-index: 5;
 }
 
 .follow.started {
   transform: scale(1) translate(-50%, -50%);
+  cursor: none;
 }
 
 .developerContainer {
   position: absolute;
   transform: translate(-50%, -50%);
+  transition: opacity 0.5s;
+  opacity: 1;
 }
 
 .invisible {
-  display: none;
+  opacity: 0 !important;
+}
+
+.container {
+  position: absolute;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  z-index: 1;
+}
+
+.container h1 {
+  font-size: 4rem;
+  margin: 0;
+}
+
+.container p {
+  margin: 0;
 }
